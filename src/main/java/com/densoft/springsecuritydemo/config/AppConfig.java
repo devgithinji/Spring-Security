@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = "com.densoft.springsecuritydemo")
 public class AppConfig {
 
+    //define a bean for the view resolver
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
