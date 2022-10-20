@@ -18,6 +18,13 @@ home page
 <p>hello: <security:authentication property="principal.username"/></p>
 <%--display user roles--%>
 <p>Roles: <security:authentication property="principal.authorities"/></p>
+
+<p>
+    <a href="${pageContext.request.contextPath}/leaders">Leadership Meeting (Only for manager)</a>
+</p>
+<p>
+    <a href="${pageContext.request.contextPath}/systems">System Control (Only for admin)</a>
+</p>
 <hr>
 <form:form action="${pageContext.request.contextPath}/logout" method="post">
     <input type="submit" value="Logout">

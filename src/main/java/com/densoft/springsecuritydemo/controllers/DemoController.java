@@ -10,4 +10,22 @@ public class DemoController {
 
         return "home";
     }
+
+    @GetMapping("/leaders")
+    public String showManager(){
+
+        return "leaders";
+    }
+
+    @GetMapping("/systems")
+    public String showAdmin() {
+
+        return "systems";
+    }
+
+    @GetMapping("/access-denied")
+    public String accessDenied() {
+
+        return "access-denied";
+    }
 }
