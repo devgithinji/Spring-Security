@@ -24,11 +24,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests() //restrict access based on the HttpServletRequest
+                .antMatchers("/assets/**").permitAll() //allow all requests to the assets folder
                 .anyRequest().authenticated() //any request coming to the app must be authenticated
                 .and()
                 .formLogin() //customising the login form process
                 .loginPage("/showMyLoginPage") //show the custom login page
                 .loginProcessingUrl("/authenticateUser") //to process the login
-                .permitAll(); //allow anyone to see the login page
+                .permitAll()//allow anyone to see the login page
+                .and()
+                .logout().permitAll(); //allow anyone to see the logout page
     }
 }
